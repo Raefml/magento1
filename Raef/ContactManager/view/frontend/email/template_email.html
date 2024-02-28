@@ -1,0 +1,21 @@
+<!-- Définition du sujet de l'e-mail -->
+
+<!-- C'est le sujet personnalisé de l'e-mail -->
+<!-- Définition du sujet de l'e-mail avec une valeur par défaut -->
+
+<!-- Ajout db -->
+{{template config_path="design/email/header_template"}}
+
+<!-- Corps de l'e-mail -->
+<p>Bonjour {{var name}} ,</p>
+<p>Merci pour votre contact. Nous avons bien reçu les informations suivantes :</p>
+<ul>
+    <li><strong>Numéro de téléphone :</strong> {{var phone}}</li>
+    <li><strong>Raison :</strong> {{var reason}}</li>
+    <li><strong>Demande :</strong> {{var request}}</li>
+</ul>
+<p>Nous reviendrons vers vous dès que possible.</p>
+<p>Cordialement, <br/> L'équipe de support</p>
+
+<!-- Ajout du pied de page -->
+{{template config_path="design/email/footer_template"}}

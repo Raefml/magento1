@@ -1,0 +1,6 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Raef_ContactManager::contact_requests" title="Demandes de Contacts" module="Raef_ContactManager" sortOrder="20" resource="Raef_ContactManager::contact_requests"/>
+        <add id="Raef_ContactManager::contact_requests_manage" title="Gérer les Demandes" module="Raef_ContactManager" sortOrder="10" parent="Raef_ContactManager::contact_requests" action="contactmanager/customercontact" resource="Raef_ContactManager::contact_requests_manage"/>
+    </menu>
+</config>

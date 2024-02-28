@@ -1,0 +1,33 @@
+<?php
+$form = $block->getForm();
+if ($form):
+    ?>
+    <div class="admin__page-section-item-content">
+        <div class="admin__page-section-item-content-head">
+            <strong class="admin__page-section-item-content-title"><?php echo $block->escapeHtml($block->getHeaderText()) ?></strong>
+        </div>
+        <?php echo $form->toHtml(); ?>
+
+        <!-- Partie du formulaire personnalisée -->
+        <div class="custom-form-section">
+            <?php
+            $fieldset = $form->getElement()->addFieldset(
+                'custom_fieldset',
+                ['legend' => __('Custom Fields'), 'class' => 'fieldset-wide']
+            );
+
+            $fieldset->addField(
+                'custom_field',
+                'text',
+                ['name' => 'custom_field', 'label' => __('Custom Field'), 'title' => __('Custom Field')]
+            );
+
+            // Ajoutez d'autres champs personnalisés ici
+
+            echo $fieldset->toHtml();
+            ?>
+        </div>
+    </div>
+<?php
+endif;
+?>

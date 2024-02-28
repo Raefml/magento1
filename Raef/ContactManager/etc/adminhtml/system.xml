@@ -1,0 +1,26 @@
+<!-- app/code/VotreVendeur/VotreModule/etc/adminhtml/config.xml -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="general" translate="label" sortOrder="10">
+            <label>Général</label>
+        </tab>
+        <section id="contact" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Contact</label>
+            <tab>general</tab> <!-- Modifier l'onglet à général -->
+            <resource>Magento_Contact::config_contact</resource>
+            <group id="reasons" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Raisons de contact</label>
+                <field id="reason_label" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Reason Label</label>
+                </field>
+                <field id="save_button" translate="label" type="button" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <frontend_model>Raef\ContactManager\Block\Adminhtml\System\Config\Form\Field\SaveButton</frontend_model>
+                    <frontend_class>primary</frontend_class>
+                    <label>Save Data</label>
+                </field>
+
+            </group>
+        </section>
+    </system>
+</config>

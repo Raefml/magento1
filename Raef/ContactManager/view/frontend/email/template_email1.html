@@ -1,0 +1,19 @@
+
+subject {{hello word}}
+<!--@vars {
+"var customer_name":"Customer Name",
+"var contact_request_date":"Contact Request Date",
+"var contact_response":"Contact Response"
+} @-->
+
+{{template config_path="design/email/header_template"}}
+
+<!-- Corps de l'e-mail -->
+<p>Bonjour {{var customer_name}},</p>
+<p>Suite à votre demande de contact envoyée le {{var contact_request_date}}, ci-dessous notre réponse :</p>
+<p>{{var response}}</p>
+<p>Cordialement,</p>
+<p>L'équipe de support</p>
+
+<!-- Ajout du pied de page -->
+{{template config_path="design/email/footer_template"}}

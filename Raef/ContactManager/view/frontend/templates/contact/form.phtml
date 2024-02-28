@@ -1,0 +1,71 @@
+<!-- Formulaire de contact -->
+
+
+<style>
+    .form.contact {
+        text-align: center;
+        margin-left: -765px;
+
+    }
+
+    .form.contact .fieldset {
+        display: inline-block;
+        text-align: left;
+    }
+
+    .form.contact .fieldset .field {
+        text-align: left;
+    }
+
+    .form.contact .actions-toolbar {
+        text-align: center;
+    }
+</style>
+<form class="form contact" action="<?= $block->escapeUrl($block->getFormAction()) ?>" id="contact-form" method="post" data-hasrequired="<?= $block->escapeHtmlAttr(__('* Required Fields')) ?>" data-mage-init='{"validation": {}}'>
+    <fieldset class="fieldset">
+        <div class="field">
+            <label class="label" for="name"><span><?= $block->escapeHtml(__('Nom')) ?></span></label>
+            <div class="control">
+                <input name="name" id="name" title="<?= $block->escapeHtmlAttr(__('Nom')) ?>" class="input-text" type="text" data-validate="{required:true}">
+            </div>
+        </div>
+        <div class="field">
+            <label class="label" for="email"><span><?= $block->escapeHtml(__('E-mail')) ?></span></label>
+            <div class="control">
+                <input name="email" id="email" title="<?= $block->escapeHtmlAttr(__('E-mail')) ?>" class="input-text" type="email" data-validate="{required:true, 'validate-email':true}">
+            </div>
+        </div>
+        <div class="field">
+            <label class="label" for="phone"><span><?= $block->escapeHtml(__('Téléphone')) ?></span></label>
+            <div class="control">
+                <input name="phone" id="phone" title="<?= $block->escapeHtmlAttr(__('Téléphone')) ?>" class="input-text" type="tel" data-validate="{required:true, 'validate-phoneStrict':true}">
+            </div>
+        </div>
+        <div class="field">
+            <label class="label" for="reason"><span><?= $block->escapeHtml(__('Motif de contact')) ?></span></label>
+            <div class="control">
+                <select name="reason" id="reason" title="<?= $block->escapeHtmlAttr(__('Motif de contact')) ?>" class="input-select" data-validate="{required:true}">
+                    <option value="J\'ai une réclamation concernant l\'expédition de ma commande"><?= $block->escapeHtml(__('J\'ai une réclamation concernant l\'expédition de ma commande')) ?></option>
+                    <option value="Je veux en savoir plus concernant des produits que j’ai achetés"><?= $block->escapeHtml(__('Je veux en savoir plus concernant des produits que j’ai achetés')) ?></option>
+                    <option value="Je souhaite retourner des produits"><?= $block->escapeHtml(__('Je souhaite retourner des produits')) ?></option>
+                    <option value="Autre demande"><?= $block->escapeHtml(__('Autre demande')) ?></option>
+                </select>
+            </div>
+        </div>
+
+
+        <div class="field">
+            <label class="label" for="request"><span><?= $block->escapeHtml(__('Demande de contact')) ?></span></label>
+            <div class="control">
+                <textarea name="request" id="request" title="<?= $block->escapeHtmlAttr(__('Demande de contact')) ?>" class="input-text" data-validate="{required:true}"></textarea>
+            </div>
+        </div>
+        <div class="actions-toolbar">
+            <div class="primary">
+                <button type="submit" title="<?= $block->escapeHtmlAttr(__('Envoyer')) ?>" class="action submit primary">
+                    <span><?= $block->escapeHtml(__('Envoyer')) ?></span>
+                </button>
+            </div>
+        </div>
+    </fieldset>
+</form>

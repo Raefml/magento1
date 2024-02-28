@@ -1,0 +1,48 @@
+
+<style>
+    .contact-cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .contact-card {
+        width: 300px;
+        margin: 20px;
+        padding: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-header {
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .card-body {
+        font-size: 14px;
+    }
+</style>
+
+<?php $_requests = $block->getContactRequests(); ?>
+
+<?php if ($_requests->getSize()): ?>
+    <div class="contact-cards">
+        <?php foreach ($_requests as $_request): ?>
+            <div class="contact-card">
+                <div class="card-header">
+                    <strong>Date et heure de la demande:</strong> <?= $block->escapeHtml($_request->getContactCreationDate()) ?>
+                </div>
+                <div class="card-body">
+                    <p><strong>Nom du client:</strong> <?= $block->escapeHtml($_request->getCustomerName()) ?></p>
+                    <p><strong>Message de la demande:</strong> <?= $block->escapeHtml($_request->getContactRequest()) ?></p>
+                    <p><strong>Réponse de la demande:</strong> <?= $block->escapeHtml($_request->getContactResponse()) ?></p>
+                    <p><strong>Date de la réponse:</strong> <?= $block->escapeHtml($_request->getContactModificationDate()) ?></p>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
+<?php else: ?>
+    <p>Aucune demande de contact trouvée.</p>
+<?php endif; ?>

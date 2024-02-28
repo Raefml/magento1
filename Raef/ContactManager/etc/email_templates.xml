@@ -1,0 +1,3 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Config/etc/email_templates.xsd">
+    <template id="template_email" label="Custom Email Template" file="template_email.html" type="html" module="Raef_ContactManager" area="frontend"/>
+</config>
